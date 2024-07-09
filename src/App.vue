@@ -1,12 +1,19 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppCards from './components/AppCards.vue'
+//Import store per API di Yu-gi-oh
+import { store } from './store.js'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppCards
+  },
+  data() {
+    return {
+      store
+    }
   }
 }
 </script>
