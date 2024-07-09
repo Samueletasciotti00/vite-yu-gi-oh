@@ -1,6 +1,7 @@
 <script>
 export default {
     name: 'Card',
+    props: ['info']
 }
 </script>
 
@@ -9,7 +10,7 @@ export default {
    <!-- Elemento singolo da esporare in AppCards -->
 
         <!-- Immagine elemento -->
-        <img src="https://dummyimage.com/300.png/09f/fff" alt="">
+        <img :src="info.ygoprodeck_url" alt="">
 
         <h4>Name of card</h4>
         <div>Type</div>

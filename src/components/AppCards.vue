@@ -1,10 +1,16 @@
 <script>
 import Card from './Card.vue'
 
+//Import store per API di Yu-gi-oh
+import { store } from '../store.js'
+
 export default {
     name: 'AppCards',
     components: {
         Card
+    },
+    data() {
+        store
     }
 }
 </script>
@@ -14,34 +20,12 @@ export default {
     <!-- Bootstrap For Container of Cards -->
     <div class="container">
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-            <div class="">
+            <div v-for="card in store.AppCardsList" :key="card.id">
 
                 <!-- Componente del singolo elemento -->
                 <Card />
             </div>
-            <div class="">
-
-                <!-- Componente del singolo elemento -->
-                <Card />
-            </div>
-
-            <div class="">
-
-                <!-- Componente del singolo elemento -->
-                <Card />
-            </div>
-
-            <div class="">
-
-                <!-- Componente del singolo elemento -->
-                <Card />
-            </div>
-
-            <div class="">
-
-                <!-- Componente del singolo elemento -->
-                <Card />
-            </div>
+            
         </div>
     </div>
    

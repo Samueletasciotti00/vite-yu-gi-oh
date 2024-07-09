@@ -1,4 +1,8 @@
 <script>
+
+// Import Libreria Axios
+import axios from 'axios'
+
 import AppHeader from './components/AppHeader.vue'
 import AppCards from './components/AppCards.vue'
 //Import store per API di Yu-gi-oh
@@ -14,7 +18,23 @@ export default {
     return {
       store
     }
-  }
+  },
+  methods: {
+    getCards(){
+      axios.
+          get(store.apiURL)
+          .then(res => {
+            console.log(res.data);
+            store.AppCardsList = res.data;
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      }
+  },
+  created(){
+    this.getCards();
+  } 
 }
 </script>
 
