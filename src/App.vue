@@ -1,10 +1,12 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
+import AppCards from './components/AppCards.vue'
 
 export default {
   name: 'App',
   components: {
-    AppHeader
+    AppHeader,
+    AppCards
   }
 }
 </script>
@@ -16,7 +18,7 @@ export default {
   <!-- Select -->
 
   <!-- Container di cards -->
-  
+  <AppCards />
 </template>
 
 <style lang="scss">
