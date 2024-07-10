@@ -1,11 +1,10 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
-    selectType: [
-        'archetype'
-    ],
+    selectType: '',
     loading: true,
     AppCardsList: [],
     apiURL:"https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
-    apiNamePar: 'archetype'
+    //API per tipo
+    apiNameParam: '?archetype=Alien'
 }); 

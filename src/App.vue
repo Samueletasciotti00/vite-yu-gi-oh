@@ -23,6 +23,16 @@ export default {
   },
   methods: {
     getCards(){
+      
+      //Variabile
+      let baseApi = store.apiURL;
+
+      //Se viene selezionato un valore allora la richiesta API verra filtrata in base al tipo
+      if (store.selectType == 'Alien') {
+        store.apiURL = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Alien';
+        console.log('change to alien');
+      }
+      
       axios.
           get(store.apiURL)
           .then(res => {
@@ -35,6 +45,7 @@ export default {
 
           console.log('ok')
       }
+      
   },
   created(){
     this.getCards();
