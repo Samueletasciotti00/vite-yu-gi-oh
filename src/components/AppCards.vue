@@ -10,7 +10,9 @@ export default {
         Card
     },
     data() {
-        store
+        return {
+            store
+        }
     }
 }
 </script>
@@ -23,7 +25,7 @@ export default {
             <div v-for="card in store.AppCardsList" :key="card.id">
 
                 <!-- Componente del singolo elemento -->
-                <Card />
+                <Card :info="card" />
             </div>
             
         </div>

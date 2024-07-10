@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      store
+      store,
     }
   },
   methods: {
@@ -24,8 +24,8 @@ export default {
       axios.
           get(store.apiURL)
           .then(res => {
-            console.log(res.data);
-            store.AppCardsList = res.data;
+            console.log(res.data.data);
+            store.AppCardsList = res.data.data;
           })
           .catch(err => {
             console.log(err);

@@ -10,10 +10,10 @@ export default {
    <!-- Elemento singolo da esporare in AppCards -->
 
         <!-- Immagine elemento -->
-        <img :src="info.ygoprodeck_url" alt="">
+        <img :src="info.card_images[0].image_url" alt="">
 
-        <h4>Name of card</h4>
-        <div>Type</div>
+        <h4>{{info.name}}</h4>
+        <div>{{ info.archetype }}</div>
   
 </template>
 
