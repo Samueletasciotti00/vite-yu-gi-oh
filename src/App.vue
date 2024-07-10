@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import AppHeader from './components/AppHeader.vue'
 import AppCards from './components/AppCards.vue'
+import AppSelect from './components/AppSelect.vue'
 //Import store per API di Yu-gi-oh
 import { store } from './store.js'
 
@@ -12,7 +13,8 @@ export default {
   name: 'App',
   components: {
     AppHeader,
-    AppCards
+    AppCards,
+    AppSelect
   },
   data() {
     return {
@@ -30,6 +32,8 @@ export default {
           .catch(err => {
             console.log(err);
           })
+
+          console.log('ok')
       }
   },
   created(){
@@ -43,7 +47,7 @@ export default {
   <AppHeader message="Yu-gi-oh Api" />
 
   <!-- Select -->
-
+  <AppSelect @search="getCards"/>
   <!-- Container di cards -->
   <AppCards />
 </template>
